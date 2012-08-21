@@ -3,24 +3,36 @@
 Scrape your express app to generate static files.
 
 ## Getting Started
-Install the module with: `npm install freezeray`
+Once this is published: install the module with: `npm install freezeray`
 
 ```javascript
 var freezeray = require('freezeray');
-freezeray.awesome(); // "awesome"
+freezeray({
+	// options
+})
 ```
 
 ## Documentation
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+Sample usage:
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
+```javascript
+process.env.NODE_ENV = 'staging';
 
-## Release History
-_(Nothing yet)_
+var freezeray = require('freezeray'),
+	config = require('./config'),
+	app = require('./app');
+
+freezeray({
+	server: app.get('server'),
+	requestUrl: 'http://localhost:' + app.get('port'),
+	routes: app.routes.get,
+	publishDir: config.compile.publish_dir,
+	publicDir: config.compile.public_dir
+});
+```
 
 ## License
 Copyright (c) 2012 Chris Jaure  
