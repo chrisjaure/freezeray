@@ -30,5 +30,5 @@
   "engines": {
     "node": "*"
   },
-  "keywords": []
+  "keywords": ["express", "static", "generator", "scraper"]
 }
