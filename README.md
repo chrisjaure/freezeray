@@ -9,11 +9,22 @@ Once this is published: install the module with: `npm install freezeray`
 var freezeray = require('freezeray');
 freezeray({
 	// options
-})
+});
 ```
 
-## Documentation
-_(Coming soon)_
+## Options
+
+### server
+The http server that's serving your content.
+
+### routes
+The `GET` routes from the express app. Can be retrieved from `app.routes.get`.
+
+### publishDir
+Where do you want the static files to end up? Any existing files will be deleted.
+
+### publicDir
+Directory containing assets that should be copied to `publishDir`.
 
 ## Examples
 Sample usage:
@@ -22,15 +33,13 @@ Sample usage:
 process.env.NODE_ENV = 'staging';
 
 var freezeray = require('freezeray'),
-	config = require('./config'),
 	app = require('./app');
 
 freezeray({
 	server: app.get('server'),
-	requestUrl: 'http://localhost:' + app.get('port'),
 	routes: app.routes.get,
-	publishDir: config.compile.publish_dir,
-	publicDir: config.compile.public_dir
+	publishDir: __dirname + '/publish',
+	publicDir: __dirname + '/public'
 });
 ```
 
