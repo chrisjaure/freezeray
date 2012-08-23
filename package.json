@@ -22,6 +22,9 @@
     }
   ],
   "main": "lib/freezeray",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
     "wrench": "~1.3.9",
     "async": "~0.1.22",
@@ -30,5 +33,15 @@
   "engines": {
     "node": "*"
   },
-  "keywords": ["express", "static", "generator", "scraper"]
+  "keywords": [
+    "express",
+    "static",
+    "generator",
+    "scraper"
+  ],
+  "devDependencies": {
+    "mocha": "~1.4.0",
+    "chai": "~1.2.0",
+    "express": "~3.0.0rc3"
+  }
 }
