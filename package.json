@@ -41,7 +41,6 @@
   ],
   "devDependencies": {
     "mocha": "~1.4.0",
-    "chai": "~1.2.0",
     "express": "~3.0.0rc3"
   }
 }
