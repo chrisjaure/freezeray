@@ -16,24 +16,32 @@ var freezeray = require('freezeray'),
 freezeray(app, options, cb);
 ```
 
-- `app` is expected to be an Express app. It should not start the server.
-- `options` are listed below.
-- `cb` will be called when complete or if an error is encountered.
 
+## Methods
 
-## Options
+### freezeray(app, options={}, callback)
 
-### `publishDir` (default: `'./publish'`)
+`app` should be an Express app. Freezeray will manage the server so please don't start it.
+
+`options` should be an object of any of the following:
+
+- `publishDir`: 
 Where do you want the static files to end up? Any existing files will be deleted.
+*default: `'./publish'`*
 
-### `publicDir` (default: `'./public'`)
+- `publicDir`:
 Directory containing assets that should be copied to `publishDir`.
+*default: `'./public'`*
 
-### `serverConfig` (default: `{ hostname: 'localhost', port: '3456'}`)
+- `serverConfig`:
 An object containing `hostname` and `port`.
+*default: `{ hostname: 'localhost', port: '3456'}`*
 
-### `verbose` (default: `false`)
+- `verbose`:
 Log what's happening.
+*default: `false`*
+
+`callback` will be called when it's done or there's an error.
 
 ## Examples
 Sample usage:
