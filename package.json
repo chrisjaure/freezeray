@@ -41,6 +41,7 @@
   ],
   "devDependencies": {
     "mocha": "~1.4.0",
-    "express": "~3.0.0rc3"
+    "express": "~3.0.0rc3",
+    "clone": "~0.1.0"
   }
 }

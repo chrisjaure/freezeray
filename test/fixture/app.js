@@ -17,3 +17,7 @@ app.get('/', function(req, res) {
 app.get('/test/', function(req, res) {
 	res.end('Test2');
 });
+
+app.get('/test.html', function(req, res) {
+	res.end('Test3');
+});
