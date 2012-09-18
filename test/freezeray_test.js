@@ -2,7 +2,7 @@ var
 	path = require('path'),
 	fs = require('fs'),
 	assert = require('assert'),
-	wrench = require('wrench'),
+	rimraf = require('rimraf'),
 	clone = require('clone'),
 	freezeray = require('../'),
 	app = require('./fixture/app'),
@@ -74,10 +74,8 @@ describe('freezeray', function() {
 
 	});
 
-	after(function() {
-		if (fs.existsSync(config.publishDir)) {
-			wrench.rmdirSyncRecursive(config.publishDir);
-		}
+	after(function(done) {
+		rimraf(config.publishDir, done);
 	});
 
 });

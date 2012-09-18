@@ -1,7 +1,7 @@
 {
   "name": "freezeray",
   "description": "Scrape your express app to generate static files.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/chrisjaure/freezeray",
   "author": {
     "name": "Chris Jaure",
@@ -26,9 +26,11 @@
     "test": "mocha"
   },
   "dependencies": {
-    "wrench": "~1.3.9",
     "async": "~0.1.22",
-    "request": "~2.10.0"
+    "request": "~2.10.0",
+    "ncp": "~0.2.6",
+    "mkdirp": "~0.3.4",
+    "rimraf": "~2.0.2"
   },
   "engines": {
     "node": "*"
